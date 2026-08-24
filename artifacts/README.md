@@ -24,8 +24,6 @@
 | `FWUpdateR200-recovery-only-forced.exe` | 强制 recovery-only 研究版 | **危险/历史实验** |
 
 这些文件基于 Intel DCM 中的官方更新器修改而来，固件载荷仍由更新器外部读取。它们不是 Intel 官方发布版本；如果你的法律/分发环境不允许公开再分发 Intel 更新器，请删除 `artifacts/FWUpdate*.exe`，只保留生成脚本和哈希。
-
 ## 完整性
 
 `SHA256SUMS.txt` 是提交时生成的 SHA-256 清单。重新构建时，输出哈希必须与预期不同/相同的原因可解释；不要把哈希不匹配的 EXE 用于设备。
-
