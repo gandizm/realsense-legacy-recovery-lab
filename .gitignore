@@ -11,6 +11,10 @@ downloads/
 *.obj
 *.log
 
+# Intentionally published, reviewed artifacts (see artifacts/README.md)
+!artifacts/
+!artifacts/**
+
 # Device-specific dumps and calibration
 *flash*.bin
 *calibration*.bin

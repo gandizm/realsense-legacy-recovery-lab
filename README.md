@@ -43,6 +43,7 @@
 - `tools/make_lr200_updater_full_match.py`：把官方更新器的 R200 PID/节点匹配字符串改为 LR200，文件长度及后续偏移不变。
 - `tools/compare_nv_layouts.py`：离线比较 LR200 `+0x2D` payload 与 R200 slot。
 - `tools/build_r200_slot_hybrid.py`：生成只改变一个 admin sector 的候选整片镜像；不接触设备。
+- `artifacts/`：本次构建/生成并核验过的探针与修改版更新器；每个文件都有 SHA-256 和风险说明。
 
 这些 C++ 工具需要在 librealsense `legacy` 源码树中构建。请先阅读代码中的安全门槛；不要删除确认变量、设备型号检查或写入范围检查。
 
@@ -55,13 +56,13 @@
 5. 不发送未经验证的 `peek/poke`，尤其不要发送 opcode `0x11/0x12`。
 6. 不把原始 `.bin` 直接交给只接受 Intel IHEX/IBIN 的更新器。
 
-## 固件为什么不放进仓库
+## 原始固件为什么不放进仓库
 
-Intel DCM、固件 IHEX/IBIN、Viewer、更新器以及设备 Flash/标定备份未提交：
+Intel DCM、固件 IHEX/IBIN、Viewer 以及设备 Flash/标定备份未提交：
 
 - Intel 二进制的再分发许可不明确；
 - Flash/标定包含设备身份和个体光学参数；
-- 修改后的更新器应由脚本从已核验的官方文件本地生成。
+- 修改后的更新器已经放在 `artifacts/` 供复现实验；对应生成脚本和哈希同时保留。
 
 `firmware/FIRMWARE_MANIFEST.md` 提供版本、大小、SHA-256、已知来源和本地提取位置。
 
