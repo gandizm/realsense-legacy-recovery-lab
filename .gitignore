@@ -1,0 +1,22 @@
+# Build products and proprietary/vendor binaries
+build/
+backups/
+images/
+downloads/
+*.bin
+*.ibin
+*.ihex
+*.exe
+*.dll
+*.obj
+*.log
+
+# Device-specific dumps and calibration
+*flash*.bin
+*calibration*.bin
+
+# Python/editor noise
+__pycache__/
+*.pyc
+.vscode/
+.idea/
